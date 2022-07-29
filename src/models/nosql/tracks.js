@@ -14,12 +14,31 @@ const TracksSchema = new mongoose.Schema(
         validator: (req) => {
           return true;
         },
+        message: "ERROR_URL",
       },
     },
-    role: {
-      type: ["user", "admin"],
-      default: "user",
+    artist: {
+      name: {
+        type: String,
+      },
+      nickname: {
+        type: String,
+      },
+      nationality: {
+        type: String,
+      },
     },
+    duration: {
+      start: {
+        type: Number,
+      },
+      end: {
+        type: Number,
+      },
+    },
+    mediaId: {
+        type: mongoose.Types.ObjectId,
+    }
   },
   {
     timestamps: true, //registrar fechas de creaccion y actualizacion
